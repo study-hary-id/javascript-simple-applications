@@ -153,6 +153,8 @@ section.features-section {
 ul.features-list {
   margin: 0;
   padding-left: 0.1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
   li {
     font-size: 1.1em;
@@ -282,5 +284,38 @@ input[type="submit"] {
         color: white;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 1080px;
+  }
+  section {
+    padding: 10em 4em;
+  }
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+    .left-col {
+      margin: 3em 3em 0 5em;
+
+      h1 {
+        font-size: 3em;
+        width: 90%;
+      }
+    }
+  }
+  .hero-img {
+    width: 30%;
+    margin-right: 8em;
+  }
+  .hero-cta {
+    display: flex;
+  }
+  .primary-cta {
+    margin-right: 1em;
   }
 }
