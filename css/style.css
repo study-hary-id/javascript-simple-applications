@@ -50,6 +50,35 @@ iframe {
 
 .navbar nav {
   display: none;
+  position: fixed;
+  z-index: 9999;
+  width: 66%;
+  right: 0;
+  top: 0;
+  background: #20272e;
+  height: 100vh;
+  padding: 1em;
+}
+
+.navbar nav ul.primary-nav {
+  margin-top: 5em;
+}
+
+.navbar nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em;
+  font-size: 1.3em;
+  text-align: right;
+}
+
+.navbar nav li a:hover {
+  font-weight: bold;
+}
+
+.navbar nav.menu-btn {
+  display: block;
 }
 
 .navbar .container {
@@ -60,6 +89,12 @@ iframe {
 }
 
 .navbar .mobile-menu {
+  cursor: pointer;
+}
+
+.navbar .mobile-menu-exit {
+  float: right;
+  margin: 0.5em;
   cursor: pointer;
 }
 
