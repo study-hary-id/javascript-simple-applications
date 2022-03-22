@@ -13,6 +13,16 @@ a {
   color: #444444;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  padding: 5em 2em;
+}
+
 .navbar {
   background: white;
   padding: 1em;
@@ -42,5 +52,47 @@ a {
 
 .navbar .mobile-menu {
   cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+}
+
+.left-col .subhead {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: gray;
+  letter-spacing: 0.3em;
+}
+
+.left-col h1 {
+  font-size: 2.5em;
+  line-height: 1.3em;
+  margin-top: 0.2em;
+}
+
+.left-col .primary-cta {
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.6em 1.3em;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-radius: 5em;
+  display: inline-block;
+}
+
+.left-col .watch-video-cta {
+  display: block;
+  margin-top: 1em;
+}
+
+.left-col .watch-video-cta img {
+  margin-right: 0.5em;
+}
+
+.hero-img {
+  width: 70%;
+  margin-top: 3em;
 }
 /*# sourceMappingURL=style.css.map */
