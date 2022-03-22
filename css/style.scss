@@ -135,6 +135,7 @@ iframe {
     margin-top: 1em;
     img {
       margin-right: 0.5em;
+      height: 13px;
     }
   }
 }
@@ -289,7 +290,7 @@ input[type="submit"] {
 
 @media only screen and (min-width: 1080px) {
   .container {
-    // width: 1080px;
+    margin: 0 auto;
   }
   section {
     padding: 10em 4em;
@@ -361,6 +362,32 @@ input[type="submit"] {
     height: 100%;
     iframe {
       height: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .container {
+    width: 1080px;
+  }
+  .features-section {
+    &::before {
+      content: "";
+      position: absolute;
+      height: 20em;
+      width: 10%;
+      background: var(--primary-color);
+      top: -4em;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 20em;
+      width: 200px;
+      background: url("../icons/dots.svg") no-repeat;
+      left: 4.5em;
+      top: 2em;
     }
   }
 }
