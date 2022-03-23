@@ -29,9 +29,9 @@ ul {
   margin: 0;
 }
 
-// section {
-//   padding: 5em 2em;
-// }
+section {
+  padding: 4em 1em;
+}
 
 // iframe {
 //   width: 100%;
@@ -104,7 +104,7 @@ ul {
   }
 }
 
-// Hero section
+// ---------- Hero -----------
 .hero {
   text-align: center;
 }
@@ -115,10 +115,11 @@ ul {
     font-weight: bold;
     color: gray;
     letter-spacing: 0.3em;
+    font-size: 0.9em;
   }
 
   h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 1.3em;
     margin-top: 0.2em;
   }
@@ -128,7 +129,7 @@ ul {
     color: white;
     text-decoration: none;
     padding: 0.6em 1.3em;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: bold;
     border-radius: 5em;
     display: inline-block;
