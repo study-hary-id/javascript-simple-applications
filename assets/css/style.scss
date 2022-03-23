@@ -5,17 +5,20 @@
 
   --primary-bg: #f2f2f2;
   --secondary-bg: #20272e;
+
+  --font-family: "Poppins", sans-serif;
 }
 
 body {
   background: var(--primary-bg);
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-family);
 }
 
 // ----- Typography -----
 h2 {
   font-size: 2em;
+  margin: 0;
 }
 
 a {
@@ -33,10 +36,10 @@ section {
   padding: 4em 1em;
 }
 
-// iframe {
-//   width: 100%;
-//   height: 300px;
-// }
+iframe {
+  width: 100%;
+  height: 300px;
+}
 
 // --------- Navbar ---------
 .navbar {
@@ -150,9 +153,9 @@ section {
   margin-top: 3em;
 }
 
-// Features section
+// --------- Features ---------
 section.features-section {
-  background: #20272e;
+  background: var(--secondary-bg);
   color: white;
 }
 
@@ -160,23 +163,23 @@ ul.features-list {
   margin: 0;
   padding-left: 0.1em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 
   li {
-    font-size: 1.1em;
+    font-size: 1em;
     margin-bottom: 1em;
     margin-left: 2em;
     position: relative;
-
     &::before {
       content: "";
       left: -2em;
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background-image: url("../../icons/bullet.svg");
+      width: 15px;
+      height: 15px;
+      background-image: url("../icons/bullet.svg");
       background-size: contain;
       margin-right: 0.5em;
+      margin-top: 0.25em;
     }
   }
 }
@@ -185,7 +188,7 @@ ul.features-list {
   display: none;
 }
 
-// Testimonials section
+// ------- Testimonials --------
 .testimonials-section {
   background: var(--primary-color);
   color: white;
@@ -197,6 +200,15 @@ ul.features-list {
     width: 80%;
     margin: 0 auto 5em auto;
     border-radius: 1em;
+    font-size: 0.9em;
+
+    blockquote {
+      margin: 0;
+    }
+
+    cite {
+      margin-left: -1em;
+    }
 
     img {
       width: 5em;
@@ -205,13 +217,21 @@ ul.features-list {
       border-radius: 50%;
       margin-top: -4.5em;
     }
+
+    &:first-child {
+      margin-top: 2em;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
-// Contact section
+// ---------- Contact ----------
 label {
   display: block;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 0.5em;
 }
 
@@ -225,31 +245,79 @@ textarea {
   box-sizing: border-box;
 }
 
+textarea {
+  font-family: var(--font-family);
+}
+
 input[type="submit"] {
   background: var(--primary-color);
   color: white;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.1em;
   border: none;
   margin-bottom: 5em;
   border-radius: 5em;
   display: inline-block;
   padding: 0.8em 2em;
-  width: unset;
+  width: 100%;
 }
 
-// Media queries
+// -------- Media queries --------
+// Min-width: 281px, normal phone.
+@media only screen and (min-width: 281px) {
+  section {
+    padding: 5em 2em;
+  }
+
+  .left-col {
+    .subhead {
+      font-size: 1em;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    .primary-cta {
+      font-size: 1.4em;
+    }
+  }
+
+  ul.features-list {
+    li {
+      font-size: 1.1em;
+      &::before {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  label {
+    font-size: 1.1em;
+  }
+
+  input {
+    font-size: 0.9em;
+  }
+
+  input[type="submit"] {
+    font-size: 1.3em;
+  }
+}
+
+// Min-width: 768px, tablet views.
 @media only screen and (min-width: 768px) {
   .mobile-menu,
   .mobile-menu-exit {
     display: none;
   }
+
   .navbar .container {
     display: grid;
     grid-template-columns: 180px auto;
     justify-content: unset;
   }
+
   .navbar nav {
     display: flex;
     justify-content: space-between;
@@ -291,15 +359,37 @@ input[type="submit"] {
       }
     }
   }
+
+  ul.features-list {
+    li {
+      margin-right: 0.5em;
+    }
+  }
+
+  .testimonials-section {
+    li {
+      font-size: 1em;
+      blockquote {
+        margin: 1em 2.5em;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    width: unset;
+  }
 }
 
+// Min-width: 1080px, notebook views.
 @media only screen and (min-width: 1080px) {
   .container {
     margin: 0 auto;
   }
+
   section {
     padding: 10em 4em;
   }
+
   .hero .container {
     display: flex;
     justify-content: space-between;
@@ -314,16 +404,20 @@ input[type="submit"] {
       }
     }
   }
+
   .hero-img {
     width: 30%;
-    margin-right: 8em;
+    margin-right: 5em;
   }
+
   .hero-cta {
     display: flex;
   }
+
   .primary-cta {
     margin-right: 1em;
   }
+
   ul.features-list {
     display: block;
     margin-left: 5em;
@@ -333,12 +427,15 @@ input[type="submit"] {
       &::before {
         width: 30px;
         height: 30px;
+        margin-top: 0;
       }
     }
   }
+
   .features-section {
     position: relative;
   }
+
   .features-section img {
     display: block;
     position: absolute;
@@ -346,19 +443,22 @@ input[type="submit"] {
     width: 350px;
     bottom: -2em;
   }
+
   .testimonials-section ul {
     display: flex;
 
     li {
-      margin: 0 1em;
+      margin: 0 1em !important;
     }
   }
+
   .contact-section {
     position: relative;
     .container {
       display: flex;
     }
   }
+
   .contact-right {
     position: absolute;
     right: 0;
@@ -370,11 +470,12 @@ input[type="submit"] {
     }
   }
 }
-
+// Min-width: 1450px, Large and wide views.
 @media only screen and (min-width: 1450px) {
   .container {
     width: 1080px;
   }
+
   .features-section {
     &::before {
       content: "";
@@ -390,7 +491,7 @@ input[type="submit"] {
       position: absolute;
       height: 20em;
       width: 200px;
-      background: url("../../icons/dots.svg") no-repeat;
+      background: url("../icons/dots.svg") no-repeat;
       left: 4.5em;
       top: 2em;
     }
