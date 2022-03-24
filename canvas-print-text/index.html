@@ -14,15 +14,36 @@
         overflow: hidden;
         background-color: grey;
       }
+      h4 {
+        margin: 0;
+        text-align: center;
+      }
+      div {
+        display: inline-block;
+      }
       #main-canvas {
+        background-color: white;
         display: inline-block;
         margin: 0 auto;
         padding: 0;
       }
+      #second-canvas,
+      #html-text {
+        background-color: white;
+      }
     </style>
   </head>
   <body>
-    <canvas id="main-canvas"></canvas>
+    <div>
+      <h4>Empty canvas element</h4>
+      <canvas id="main-canvas"></canvas>
+    </div>
+    <div id="canvas-text">
+      <h4>Print text on canvas</h4>
+    </div>
+    <div id="html-text">
+      <h4>Print text on html</h4>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
