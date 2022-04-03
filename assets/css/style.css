@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 :root {
-  --primary-color: #007af3;
+  --primary-color: #f3db4c;
   --primary-bg: #f2f2f2;
-  --secondary-bg: #20272e;
+  --secondary-bg: #343434;
   --font-family: "Poppins", sans-serif;
 }
 
@@ -120,14 +120,19 @@ iframe {
 }
 
 .left-col .primary-cta {
-  background: var(--primary-color);
-  color: white;
   text-decoration: none;
   padding: 0.6em 1.3em;
   font-size: 1.2em;
   font-weight: bold;
   border-radius: 5em;
   display: inline-block;
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+}
+
+.left-col .primary-cta:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 .left-col .watch-video-cta {
@@ -143,6 +148,7 @@ iframe {
 .hero-img {
   width: 70%;
   margin-top: 3em;
+  border-radius: 0.3em;
 }
 
 section.features-section {
