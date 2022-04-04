@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom HTML Dialog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button type="button" id="btn-alert">Alert</button>
+    <button type="button" id="btn-confirm">Confirm</button>
+    <button type="button" id="btn-prompt">Prompt</button>
+    <button type="button" id="btn-custom">Custom</button>
+    <script type="module">
+      import Dialog from "./dialog.js";
+
+      const dialog = new Dialog();
+      console.log(dialog);
+
+      // document.getElementById("btn-alert").addEventListener("click", (e) => {
+      //   dialog.alert("Please refresh your browser!").then((res) => {
+      //     console.log(res);
+      //   });
+      // });
+      // Async/Await approach
+      document
+        .getElementById("btn-alert")
+        .addEventListener("click", async (e) => {
+          const value = await dialog.alert("Please refresh your browser!");
+          console.log(value);
+        });
+
+      document.getElementById("btn-confirm").addEventListener("click", (e) => {
+        dialog.confirm("Do you want to continue?").then((res) => {
+          console.log(res);
+        });
+      });
+
+      document.getElementById("btn-prompt").addEventListener("click", (e) => {
+        dialog.prompt("The meaning of life?", 42).then((res) => {
+          console.log(res);
+        });
+      });
+
+      /* Custom HTML Dialog */
+      document.getElementById("btn-custom").addEventListener("click", (e) => {
+        dialog.open({
+          accept: "Sign in",
+          dialogClass: "custom",
+          message: "Please enter your credentials",
+          soundAccept: "https://assets.stoumann.dk/audio/accept.mp3",
+          soundOpen: "https://assets.stoumann.dk/audio/open.mp3",
+          target: e.target,
+          template: `
+            <label>Username<input type="text" name="username" value="admin"></label>
+            <label>Password<input type="password" name="password" value="password"></label>`,
+        });
+        dialog.waitForUser().then((res) => {
+          console.log(res);
+        });
+      });
+    </script>
+  </body>
+</html>
