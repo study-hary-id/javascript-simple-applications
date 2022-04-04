@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Web application made with canvas tag." />
+    <title>Canvas Print Text</title>
+    <style>
+      body {
+        display: block;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: grey;
+      }
+      h4 {
+        margin: 0;
+        text-align: center;
+      }
+      div {
+        display: inline-block;
+      }
+      #main-canvas {
+        background-color: white;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0;
+      }
+      #second-canvas,
+      #html-text {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h4>Empty canvas element</h4>
+      <canvas id="main-canvas"></canvas>
+    </div>
+    <div id="canvas-text">
+      <h4>Print text on canvas</h4>
+    </div>
+    <div id="html-text">
+      <h4>Print text on html</h4>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
