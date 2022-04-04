@@ -284,6 +284,10 @@ input[type="submit"] {
   display: inline-block;
   padding: 0.8em 2em;
   width: 100%;
+
+  &:hover, &:active {
+    background: var(--primary-dark-color);
+  }
 }
 
 // -------- Media queries --------
@@ -498,6 +502,7 @@ input[type="submit"] {
 
   .contact-left {
     margin-left: 5em;
+    width: 45%;
   }
 
   .contact-right {

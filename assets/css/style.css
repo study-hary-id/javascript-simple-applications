@@ -264,6 +264,10 @@ input[type="submit"] {
   width: 100%;
 }
 
+input[type="submit"]:hover, input[type="submit"]:active {
+  background: var(--primary-dark-color);
+}
+
 @media only screen and (min-width: 281px) {
   section {
     padding: 5em 2em;
@@ -451,6 +455,7 @@ input[type="submit"] {
   }
   .contact-left {
     margin-left: 5em;
+    width: 45%;
   }
   .contact-right {
     position: absolute;
